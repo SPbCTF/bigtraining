@@ -1,0 +1,3 @@
+apple|100|0|tasty apple
+banana|200|1|tasty banana
+secret|300|0|tasty secret

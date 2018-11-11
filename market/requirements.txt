@@ -1,0 +1,6 @@
+colorama==0.4.0
+console-menu==0.4.0
+cowpy==1.0.3
+filelock==3.0.9
+pycrypto==2.6.1
+termcolor==1.1.0
