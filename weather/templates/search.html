@@ -1,0 +1,15 @@
+Search for a city:
+<form name="forecast" action="/search" method="POST">
+    City: <input type="text" name="city">
+    <input type="submit" value="Search">
+</form>
+
+{% if city %}
+    <h1>All forecasts in {{ city }}</h1>
+
+    <div>
+        {% for forecast in forecasts %}
+            <div>Today in {{ forecast["city"] }} is {{ forecast["weather"] }}. The day temperature is {{ forecast["day"] }} and night is {{ forecast["night"] }}</div>
+        {% endfor %}
+    </div>
+{% endif %}

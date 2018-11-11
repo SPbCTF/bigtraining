@@ -1,0 +1,10 @@
+<a href="/login">Login</a><br>
+<a href="/register">Register</a><br>
+
+<h1>Non-official forecasts</h1>
+
+<div>
+    {% for forecast in forecasts %}
+        <div>Today in {{ forecast[1] }} is {{ forecast[2] }}. Day temperature is {{ forecast[3] }} and night is {{ forecast[4] }}</div>
+    {% endfor %}
+</div>

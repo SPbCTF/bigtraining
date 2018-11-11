@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
+
+  db:
+    image: mongo:latest
+    ports:
+      - 27017:27017

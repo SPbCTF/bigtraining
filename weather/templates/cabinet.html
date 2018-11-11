@@ -1,0 +1,19 @@
+Add a new forecast:
+<form name="forecast" action="/cabinet" method="POST">
+    City: <input type="text" name="city">
+    Weather: <input type="text" name="weather">
+    Day temperature: <input type="text" name="day">
+    Night temperature: <input type="text" name="night">
+    Official: <input type="checkbox" value="1" name="official">
+    <input type="submit" value="Create">
+</form>
+
+<hr>
+
+<h1>Your forecasts</h1>
+
+<div>
+    {% for forecast in forecasts %}
+        <div>Today in {{ forecast[2] }} is {{ forecast[3] }}. Day temperature is {{ forecast[4] }} and night is {{ forecast[5] }}</div>
+    {% endfor %}
+</div>
