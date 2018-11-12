@@ -1,0 +1,43 @@
+<html>
+<head>
+</head>
+<body>
+  <H3>Welcome to cakecoin platform</H3>
+  <p>
+    We pays money for you hashes. Give me as many strings with md5(string)[0] = 0x1 and md5(string)[1] = 0x37
+  </p>
+  {{if .Login}}
+    Logged in as {{.Login}} ({{.Money}})
+    <p><a href="/logout">Logout</a></p>
+    Send money
+    <div>
+      <form action="/sendmoney" method="POST">
+        <span>To:</span>
+        <input type=text name="to_login"/>
+        <span>Count:</span>
+        <input type=text name="to_money"/>
+        <span>Message:</span>
+        <input type=text name="to_message"/>
+        <input type="submit" value="Send">
+      </form>
+    </div>
+    <div>
+      Enter string with valid hash and get more money
+      <form action="/getmoney" method="POST">
+        <span>Pay:</span>
+        <input type=text name="pay"/>
+        <input type="submit" value="Get more money">
+      </form>
+    </div>
+    <table>
+      {{range .Transactions}}
+      <tr><td>{{.To}}</td><td>{{.Money}}</td><td>{{.Message}}</td></tr>
+      {{end}}
+    </table>
+    <a  style="position:absolute; left:90%; top:10%" href="/userlist">Get list of users only for 1 cakecoin!</a>
+  {{else}}
+    <p><a href="/register">Register</a></p>
+    <p><a href="/login">Login</a></p>
+  {{end}}
+</body>
+</html>

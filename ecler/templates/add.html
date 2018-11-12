@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>
+    Ecler
+  </title>
+</head>
+<body>
+  <div>
+    <a href="/">BACK</a>
+    <span>New Image</span>
+    <form method=post enctype=multipart/form-data>
+      <input type='text' name="comment"></input>
+      <input type=file name=image>
+         <input type=submit value=Upload>
+    </form>
+    {% if message %}
+      {% autoescape false %}
+      <div>{{ message }}</div>
+      {% endautoescape %}
+    {% endif %}
+  </div>
+</body>
+</html>

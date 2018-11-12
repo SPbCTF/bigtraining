@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>
+    Eclergram
+  </title>
+</head>
+<body>
+  <H1>Eclergram</H1>
+  <H3>Only for cats and food!</H3>
+  <div>
+    <span>Images</span><span>
+      {% if not user %}
+    </span><span><a href="/reg">REG</a></span><span><a href="/login">LOGIN</a></span>
+    {% else %}
+    <a href="/add">ADD</a>
+      <div>{{ user }}</div><span><a href="/logout">LOGOUT</a></span>
+    {% endif %}
+    <div>
+    {% for m in images: %}
+      <span>
+        <a href="/read/{{ m['imid'] }}">
+          <img src="{{ m['fname'] }}" />
+          <div>{{ m['message'] }} at {{ m['date'] }}</div>
+        </a>
+      </span>
+    {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

