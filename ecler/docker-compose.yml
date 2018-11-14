@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  ecler:
+    build: .
+    volumes:
+      - ./service:/home/ecler
+    restart: always
+    ports:
+      - 3125:3125

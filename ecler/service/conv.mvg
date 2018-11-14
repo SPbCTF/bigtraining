@@ -1,11 +1,10 @@
-
 push graphic-context
 viewbox 0 0 640 320
-image Add 0,0,640,320 'tmp/7jpg'
+image Add 0,0,640,320 '1.jpg'
 push graphic-context
         font-size 40
-        fill 'black'
+        fill 'white'
         stroke-width 1
-        text 0,300 'fff'
+        text 0,300 'Average: 20.0'
 pop graphic-context
 pop graphic-context
