@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  weeper:
+    build: .
+    volumes:
+      - ./service:/home/weeper
+    restart: always
+    ports:
+      - 6868:6868
