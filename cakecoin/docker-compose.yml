@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  cakecoin:
+    build: .
+    volumes:
+      - ./service:/home/cakecoin
+    restart: always
+    ports:
+      - 2145:2145
