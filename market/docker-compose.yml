@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  market:
+    build: .
+    volumes:
+      - ./service:/home/market
+    restart: always
+    ports:
+      - 10081:10081
