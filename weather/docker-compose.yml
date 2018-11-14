@@ -1,19 +1,41 @@
 version: '2'
 
 services:
+  weather:
+    build: .
+    volumes:
+      - ./service:/home/weather
+    restart: always
+    ports:
+      - 5000:5000
+    depends_on:
+      - mysql
+      - redis
+      - db
+
   mysql:
-    image: mysql:latest
+    image: mysql:5.5
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    restart: always
     ports:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: weather
 
   redis:
     image: redis:alpine
+    volumes:
+      - ./redis_data:/data
+    restart: always
     ports:
       - 6379:6379
 
   db:
     image: mongo:latest
+    volumes:
+      - ./mongo_data:/data
+    restart: always
     ports:
       - 27017:27017

@@ -5,8 +5,8 @@ from pymongo import MongoClient
 import redis
 
 
-db = MySQLDatabase('weather2', user='root', password='root', host='localhost', port=3306)
-client = MongoClient()
+db = MySQLDatabase('weather', user='root', password='root', host='mysql', port=3306)
+client = MongoClient('mongodb://db:27017/')
 
 
 class Users(Model):
@@ -32,7 +32,7 @@ class Forecasts(Model):
 class Cache:
 
     def __init__(self):
-        self.r = redis.StrictRedis(host='localhost', port=6379, decode_responses=True)
+        self.r = redis.StrictRedis(host='redis', port=6379, decode_responses=True)
 
     def validate(self, data):
         self.r.set("log:{}".format(time.time()), json.dumps(data))
@@ -46,7 +46,7 @@ class Cache:
 class Search:
 
     def __init__(self):
-        self.db = client['search2']
+        self.db = client['search']
         self.collection = self.db['forecasts']
 
     def add(self, city, weather, day, night, official):
