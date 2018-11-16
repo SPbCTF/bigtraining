@@ -1,4 +1,4 @@
-                   ANYONE-BUT-ARSIB-GPL LICENSE
+                   ANYONE-BUT-ACISO-GPL LICENSE
 
 Лицензия «разрешено всем, кроме Арсиба».
 
